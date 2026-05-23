@@ -1,23 +1,59 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Quiubole</title>
+        <title>Ramses Nuñez</title>
         <script>
-            function diHola (){
-                let inputElement = document.getElementById('name-input');
-                let name = inputElement.value;
+            function recibirDatos (){
+                let inputElement = document.getElementById('promedio-input');
+                let promedio = inputElement.value;
 
+                let inputElement = document.getElementById('costo-input');
+                let costo = inputElement.value;
+
+                let inputElement = document.getElementById('meses-input');
+                let meses = inputElement.value;
+
+                let beca = 0;
+                let subtotal = 0;
+                let total = 0;
+                if (promedio < 85 && promedio > 90) {
+                    beca = 60;
+                    subtotal = costo * .40;
+                }
+                else if (promedio <= 90 && promedio > 95) {
+                    beca = 80;
+                    subtotal = costo * .20;
+                }
+                else if (promedio <=95 && promedio > 101) {
+                    beca = 100;
+                    subtotal = 0;
+                }
+                else {
+                    subtotal = costo;
+                }
+                
+                total = subtotal + ((costo * .10) * meses);
+                
                 let outputElement = document.getElementById('output');
-                outputElement.innerText = 'hola ' + name + '!'
+                outputElement.innerText = 'Su promedio de ' + promedio + ' le financia un ' + beca + 
+                    '% de su colegiatura, dando un subtotal de: ' + subtotal + '$ y un total de ' + total + '$ a ' + meses + ' meses con 10% de interes';
             }
         </script>
     </head>
     <body>
-        <button onclick = "diHola();">
-            cola
-
+        
+        <input id = 'promedio-input'>
+            Promedio
+            </input>
+        <input id = 'costo-input'>
+            Costo
+            </input>
+        <input id = 'meses-input'>
+            Meses
+            </input>
+        <button onclick = "recibirDatos();">
+            Aceptar
         </button>
-        <input id = 'name-input' />
         
         <p id="output"></p>
     </body>
