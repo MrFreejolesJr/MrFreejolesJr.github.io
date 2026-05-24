@@ -16,6 +16,7 @@
                 let beca = 0;
                 let subtotal = 0;
                 let total = 0;
+				let mensualidad = 0;
                 if (promedio > 95) {
                     beca = 100;
                     subtotal = 0;
@@ -31,17 +32,18 @@
                 else {
                     subtotal = costo;
                 }
+				mensualidad = total / meses;
                 if (isNaN(promedio)||isNaN(costo)||isNaN(meses)){
                   alert('Valor invalido, favor de introducir un numero valido');
                     
 }
-                else if ((promedio>100)||(promedio<1)){
-                    alert('Favor de introducir una calificacion valida (1-100)');
+                else if ((promedio>100)||(promedio<0)){
+                    alert('Favor de introducir una calificacion valida (0-100)');
                 }
                 total = subtotal + ((subtotal * 0.10) * meses);
                 let outputElement = document.getElementById('output');
                 outputElement.innerText = 'Su promedio de ' + promedio + ' de calificacion le financia un ' + beca + '% de su colegiatura, dando un subtotal de: ' + subtotal + 
-                    '$ y un total de ' + total + '$ a ' + meses + ' meses con 10% de interes';
+                    '$ y un total de ' + total + '$ a ' + meses + ' pagos de ' + mensualidad + '$ con 10% de interes agregado';
             }
         </script>
     </head>
