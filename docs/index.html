@@ -31,7 +31,13 @@
                 else {
                     subtotal = costo;
                 }
-                
+                if (isNaN(promedio)||isNaN(costo)||isNaN(meses)){
+                  alert('Valor invalido, favor de introducir un numero valido');
+                    
+}
+                else if ((promedio>100)||(promedio<1)){
+                    alert('Favor de introducir una calificacion valida (1-100)');
+                }
                 total = subtotal + ((subtotal * 0.10) * meses);
                 let outputElement = document.getElementById('output');
                 outputElement.innerText = 'Su promedio de ' + promedio + ' de calificacion le financia un ' + beca + '% de su colegiatura, dando un subtotal de: ' + subtotal + 
@@ -40,7 +46,32 @@
         </script>
     </head>
     <body>
-        
+        <h1>Calculadora de becas y financiamiento estudiantil</h1>
+      <style>
+        body {
+          background-color: linen;
+        }
+        h1 {
+          text-align: center;
+          font-size: 32px;
+				background-color: lightblue;
+        }
+        table {
+          text-align: center;
+          background-color: gold;
+        }
+        td {
+          align="center";
+          background-color: lightblue;
+        }
+        #output {
+          font-size: 24px;
+        }
+      </style>
+      <table style="margin: 0px auto;" border="1" cellpadding=10>
+  <tbody>
+    <tr>
+      <td  width=100>
         <input id = 'promedio-input'>
             Promedio
             </input>
@@ -50,10 +81,16 @@
         <input id = 'meses-input'>
             Meses
             </input>
+<p></p>
         <button onclick = "calcularDatos();">
             Aceptar
         </button>
-        
+        </tbody>
+</table>
+<table style="margin: 0px auto;" border="1" cellpadding=10>
+  <tbody>
+    <tr>
+      <td width=300>
         <p id="output"></p>
     </body>
 </html>
