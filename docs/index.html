@@ -32,7 +32,7 @@
                 else {
                     subtotal = costo;
                 }
-				mensualidad = total / meses;
+				
                 if (isNaN(promedio)||isNaN(costo)||isNaN(meses)){
                   alert('Valor invalido, favor de introducir un numero valido');
                     
@@ -41,6 +41,7 @@
                     alert('Favor de introducir una calificacion valida (0-100)');
                 }
                 total = subtotal + ((subtotal * 0.10) * meses);
+				mensualidad = total / meses;
                 let outputElement = document.getElementById('output');
                 outputElement.innerText = 'Su promedio de ' + promedio + ' de calificacion le financia un ' + beca + '% de su colegiatura, dando un subtotal de: ' + subtotal + 
                     '$ y un total de ' + total + '$ a ' + meses + ' pagos de ' + mensualidad + '$ con 10% de interes agregado';
