@@ -3,39 +3,39 @@
     <head>
         <title>Ramses Nuñez</title>
         <script>
-            function recibirDatos(){
-                let inputElement = document.getElementById('promedio-input');
-                let promedio = inputElement.value;
+            function calcularDatos(){
+                let inputElement1 = document.getElementById('promedio-input');
+                let promedio = parseInt(inputElement1.value);
 
-                let inputElement = document.getElementById('costo-input');
-                let costo = inputElement.value;
+                let inputElement2 = document.getElementById('costo-input');
+                let costo = parseInt(inputElement2.value);
 
-                let inputElement = document.getElementById('meses-input');
-                let meses = inputElement.value;
+                let inputElement3 = document.getElementById('meses-input');
+                let meses = parseInt(inputElement3.value);
 
                 let beca = 0;
                 let subtotal = 0;
                 let total = 0;
-                if (promedio < 85 && promedio > 90) {
-                    beca = 60;
-                    subtotal = costo * .40;
+                if (promedio > 95) {
+                    beca = 100;
+                    subtotal = 0;
                 }
-                else if (promedio <= 90 && promedio > 95) {
+                else if (promedio > 90) {
                     beca = 80;
                     subtotal = costo * .20;
                 }
-                else if (promedio <=95 && promedio > 101) {
-                    beca = 100;
-                    subtotal = 0;
+                else if (promedio >85) {
+                    beca = 60;
+                    subtotal = costo * .40;
                 }
                 else {
                     subtotal = costo;
                 }
                 
-                total = subtotal + ((costo * .10) * meses);
-                
+                total = subtotal + ((subtotal * 0.10) * meses);
                 let outputElement = document.getElementById('output');
-                outputElement.innerText = 'Su promedio de ' + promedio + ' le financia un ' + beca + '% de su colegiatura, dando un subtotal de: ' + subtotal + '$ y un total de ' + total + '$ a ' + meses + ' meses con 10% de interes';
+                outputElement.innerText = 'Su promedio de ' + promedio + ' de calificacion le financia un ' + beca + '% de su colegiatura, dando un subtotal de: ' + subtotal + 
+                    '$ y un total de ' + total + '$ a ' + meses + ' meses con 10% de interes';
             }
         </script>
     </head>
@@ -50,7 +50,7 @@
         <input id = 'meses-input'>
             Meses
             </input>
-        <button onclick = "recibirDatos();">
+        <button onclick = "calcularDatos();">
             Aceptar
         </button>
         
