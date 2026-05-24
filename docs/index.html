@@ -3,7 +3,7 @@
     <head>
         <title>Ramses Nuñez</title>
         <script>
-            function recibirDatos (){
+            function recibirDatos(){
                 let inputElement = document.getElementById('promedio-input');
                 let promedio = inputElement.value;
 
@@ -35,8 +35,7 @@
                 total = subtotal + ((costo * .10) * meses);
                 
                 let outputElement = document.getElementById('output');
-                outputElement.innerText = 'Su promedio de ' + promedio + ' le financia un ' + beca + 
-                    '% de su colegiatura, dando un subtotal de: ' + subtotal + '$ y un total de ' + total + '$ a ' + meses + ' meses con 10% de interes';
+                outputElement.innerText = 'Su promedio de ' + promedio + ' le financia un ' + beca + '% de su colegiatura, dando un subtotal de: ' + subtotal + '$ y un total de ' + total + '$ a ' + meses + ' meses con 10% de interes';
             }
         </script>
     </head>
